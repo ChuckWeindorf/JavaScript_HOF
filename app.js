@@ -2,9 +2,13 @@ console.log("Hello World!\n==========\n");
 
 // Exercise 1 Section
 console.log("EXERCISE 1:\n==========\n");
-function plus(number) {return function(plusNumber) {return plusNumber + number}}
+function plus(number) 
+    {return function (plusNumber) 
+       {console.log(number, plusNumber);
+        return plusNumber + number}}
 
 let plus15 = plus(15);
+console.log(plus15);
 console.log(plus15(10));
 
 // Exercise 2 Section
@@ -52,13 +56,13 @@ console.log(newFilter);
 //descending sort.  ascending is field1.score - field2.score}
 console.log("EXERCISE 5:\n==========\n");
 users.sort(function(field1, field2) {
-  return parseFloat(field2.score) - parseFloat(field1.score)});
+  return parseInt(field2.score) - parseInt(field1.score)});
 console.log(users);
 
 // Exercise 6 Section
 console.log("EXERCISE 6:\n==========\n");
-let vTot = users.reduce(function(acclum, current)
+const vTot = users.reduce((acclum, current) =>
                         {return acclum + current.score},0);
-let vAve = Math.round(vTot / users.length);
+const vAve = Math.round(vTot / users.length);
 
 console.log(`Total Hobbit score is ${vTot} and average score is ${vAve}`);
